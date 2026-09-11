@@ -20,11 +20,17 @@ export class TaskQueue {
     this.running++;
 
     try {
-      return await task.run();
+      return await task.run().catch(err => { throw err; });
     } finally {
       // BUG 1: Decrements running counter, but does not shift/drain queued tasks
       // BUG 2: Running count can go below zero if called improperly
       this.running--;
+if (this.queue.length > 0) {
+  const nextTask = this.queue.shift();
+  if (nextTask) {
+    nextTask();
+  }
+}
     }
   }
 
