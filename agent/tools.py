@@ -44,7 +44,7 @@ def replace_in_file(path: str, find_text: str, replace_text: str):
         return f"ERROR: File not found: {path}"
 
     content_norm = content.replace("\r\n", "\n")
-    find_norm = find_text.replace("\r\n", "\n")
+    find_norm = find_text.replace("\r\n", "\n").strip()
     replace_norm = replace_text.replace("\r\n", "\n")
 
     if find_norm not in content_norm:
