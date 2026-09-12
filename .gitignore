@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache
+.cache/
+.next/
+.vercel/
+coverage/
+
+# Misc
+tmp/
+temp
